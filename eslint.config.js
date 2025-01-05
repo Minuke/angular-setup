@@ -36,6 +36,11 @@ module.exports = tseslint.config(
 					style: 'kebab-case'
 				}
 			],
+			"@typescript-eslint/explicit-function-return-type": "error",
+			"@typescript-eslint/no-unused-vars": ["error", { "argsIgnorePattern": "^_" }],
+			"@typescript-eslint/no-explicit-any": "warn",
+			"@typescript-eslint/member-ordering": "error",
+			"@typescript-eslint/consistent-type-assertions": "warn",
 			'prettier/prettier': 'error' // Aplica las reglas de Prettier como errores
 		}
 	},
@@ -46,6 +51,8 @@ module.exports = tseslint.config(
 			...angular.configs.templateAccessibility,
 			prettierConfig // Extiende Prettier para HTML también
 		],
-		rules: {}
+		rules: {
+			"@angular-eslint/template/no-call-expression": "warn",
+		}
 	}
 );
